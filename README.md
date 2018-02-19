@@ -41,3 +41,23 @@ Result will be:
 |    10|name10|
 +------+------+
 ```
+```scala
+df.printSchema()
+```
+
+```text
+root
+ |-- number: integer (nullable = false)
+ |-- name: string (nullable = true)
+```
+## Work with columns
+
+1.Using $-notation
+2.Using SQL
+3.Reffering to Dataframe
+
+```scala 
+    df.filter($"number" > 5).show()
+    df.filter("name like '%1%'").show()
+    df.filter(df("number") < 3).show()
+```
